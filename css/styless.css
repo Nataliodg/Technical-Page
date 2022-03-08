@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    background: #141E27;
+    color: #DADBBD;
+}
+
+.code {
+    background-color: #203239;
+    padding: 10px;
+}
+
+code {
+    background-color: #203239;
+}
+
+a {
+    text-decoration: none;
+    color: #6998AB;
+}
+
+#navbar {
+    margin: -15px 70px 0px 20px;
+    position: fixed;
+}
+
+.nav-header {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.nav-link {
+    width: 100%;
+}
+
+#main-doc {
+    margin-top: -27px;
+    margin-left: 200px;
+    padding: 10px;
+}
+
+@media (max-height: 270px) {
+    #navbar {
+        height: 100%;
+        display: block;
+        overflow-y: scroll;
+    }
+
+    #navbar h3 {
+        padding-right: 10px;
+    }
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical JS Documentation</title>
+    <link rel="stylesheet" href="css/styless.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar">
+        <h3>JS Documentation</h3>
+        <header class="nav-header"><a class="nav-link" href="#Introduction">Introduction</a></header>
+        <header class="nav-header"><a class="nav-link" href="#Code_structure">Code Structure</a></header>
+        <header class="nav-header"><a class="nav-link" href="#Use_strict">Use Strict</a></header>
+        <header class="nav-header"><a class="nav-link" href="#Variables">Variables</a></header>
+        <header class="nav-header"><a class="nav-link" href="#Data_types">Data Types</a></header>
+        <header class="nav-header"><a class="nav-link" href="#Reference">Reference</a></header>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>
+                <h1>Introduction</h1>
+                <p>JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.</p>
+                <p>JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example:</p>
+                <ul>
+                    <li>
+                        <p>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.</p>
+                    </li>
+                    <li>
+                        <p>Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.</p>
+                    </li>
+                </ul>
+                <h3>What you should already know</h3>
+                <p>This guide assumes you have the following basic background:</p>
+                <ul>
+                    <li>
+                        <p>A general understanding of the Internet and the World Wide Web (WWW).</p>
+                    </li>
+                    <li>
+                        <p>Good working knowledge of HyperText Markup Language (HTML).</p>
+                    </li>
+                    <li>
+                        <p>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.</p>
+                    </li>
+                </ul>
+                <h3>Hello World</h3>
+                <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
+                <div class="code">
+                    <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                        <br>
+                        greetMe("World");</code>
+                </div>
+                <p>the <code>function</code> is declared and within it the <code>alert</code> property is called where a text string concatenated with the value <code>yourName</code> that we indicate is introduced.<br><br>
+                    At the end we call the function <code>greetMe("World");</code>
+                </p>
+            </header>
+        </section>
+        <section class="main-section" id="Code_structure">
+            <header>
+                <h1>Code structure</h1>
+                <p>The first thing we’ll study is the building blocks of code.</p>
+                <h3>Statements</h3>
+                <p>Statements are syntax constructs and commands that perform actions.<br><br>
+                    We’ve already seen a statement, <code>alert('Hello, world!')</code>, which shows the message “Hello, world!”.<br><br>
+                    We can have as many statements in our code as we want. Statements can be separated with a semicolon.<br><br>
+                    For example, here we split “Hello World” into two alerts:</p>
+                <div class="code">
+                    <code>alert('Hello'); alert('World');</code>
+                </div>
+                <p>Usually, statements are written on separate lines to make the code more readable:</p>
+                <div class="code">
+                    <code>alert('Hello');<br>
+                        alert('World');</code>
+                </div>
+                <h3>Semicolons</h3>
+                <p>A semicolon may be omitted in most cases when a line break exists.<br>
+                    This would also work:</p>
+                <div class="code">
+                    <code>alert('Hello')<br>
+                        alert('World')</code>
+                </div>
+                <p>Here, JavaScript interprets the line break as an “implicit” semicolon. This is called an automatic semicolon insertion.</p>
+                <h4>In most cases, a newline implies a semicolon. But “in most cases” does not mean “always”!</h4>
+                <p>There are cases when a newline does not mean a semicolon. For example:</p>
+                <div class="code">
+                    <code>
+                        alert(3 +<br>1<br>+ 2);
+                    </code>
+                </div>
+                <p>The code outputs <code>6</code> because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus <code>"+"</code>, then it is an “incomplete expression”, so a semicolon there would be incorrect. And in this case, that works as intended.</p>
+                <h3>Comments</h3>
+                <p>As time goes on, programs become more and more complex. It becomes necessary to add comments which describe what the code does and why.<br><br>
+                    Comments can be put into any place of a script. They don’t affect its execution because the engine simply ignores them.</p>
+                <h4>One-line comments start with two forward slash characters <code>//</code>.</h4>
+                <p>The rest of the line is a comment. It may occupy a full line of its own or follow a statement.<br><br>
+                    Like here:</p>
+                <div class="code">
+                    <code>// This comment occupies a line of its own<br>
+                        alert('Hello');
+                        <br>
+                        <br>
+                        alert('World'); // This comment follows the statement</code>
+                </div>
+                <h4>Multiline comments start with a forward slash and an asterisk <code>/*</code> and end with an asterisk and a forward slash <code>*/</code>.</h4>
+                <p>Like this:</p>
+                <div class="code">
+                    <code>/* An example with two messages.<br>
+                        This is a multiline comment.<br>
+                        */<br>
+                        alert('Hello');<br>
+                        alert('World');</code>
+                </div>
+                <p>Please, don’t hesitate to comment your code.</p>
+            </header>
+        </section>
+        <section class="main-section" id="Use_strict">
+            <header>
+                <h1>The modern mode, "use strict"</h1>
+                <p>For a long time, JavaScript evolved without compatibility issues. New features were added to the language while old functionality didn’t change.
+                    <br><br>
+                    That had the benefit of never breaking existing code. But the downside was that any mistake or an imperfect decision made by JavaScript’s creators got stuck in the language forever.<br><br>
+                    This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: <code>"use strict"</code>.</p>
+                <h3>“use strict”</h3>
+                <p>The directive looks like a string: <code>"use strict"</code> or <code>'use strict'</code>. When it is located at the top of a script, the whole script works the “modern” way.
+                    <br><br>
+                    For example:</p>
+                <div class="code">
+                    <code>"use strict";
+                        <br><br>
+                        // this code works the modern
+                        way
+                    </code>
+                </div>
+                <h4>Browser console</h4>
+                <p>When you use a developer console to run code, please note that it doesn’t <code>use strict</code> by default.
+                    <br><br>
+                    Sometimes, when <code>use strict</code> makes a difference, you’ll get incorrect results.
+                    <br><br>
+                    So, how to actually <code>use strict</code> in the console?
+                    <br><br>
+                    First, you can try to press Shift+Enter to input multiple lines, and put use strict on top, like this:</p>
+                <div class="code">
+                    <code>'use strict'; < Shift+Enter for a newline>
+                            <br>
+                            // ...your code<br>
+                            <Enter to run></code>
+                </div>
+                <p>It works in most browsers, namely Firefox and Chrome.</p>
+                <h4>Should we “use strict”?</h4>
+                <p>The question may sound obvious, but it’s not so.
+                    <br><br>
+                    One could recommend to start scripts with <code>use strict</code>… But you know what’s cool?
+                    <br><br>
+                    Modern JavaScript supports “classes” and “modules” – advanced language structures (we’ll surely get to them), that enable <code>use strict</code> automatically. So we don’t need to add the <code>use strict</code> directive, if we use them.</p>
+            </header>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>
+                <h1>Variables</h1>
+                <p>Most of the time, a JavaScript application needs to work with information. Here are two examples:</p>
+                <ol>
+                    <li>An online shop – the information might include goods being sold and a shopping cart.</li>
+                    <li>A chat application – the information might include users, messages, and much more.</li>
+                </ol>
+                <p>Variables are used to store this information.</p>
+                <h3>A variable</h3>
+                <p>A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.<br><br>
+                    To create a variable in JavaScript, use the <code>let</code> keyword.<br><br>
+                    The statement below creates (in other words: declares) a variable with the name “message”:</p>
+                <div class="code">
+                    <code>let message;</code>
+                </div>
+                <p>Now, we can put some data into it by using the assignment operator <code>=</code>:</p>
+                <div class="code">
+                    <code>let message;
+                        <br><br>
+                        message = 'Hello'; // store the string 'Hello' in the variable named message</code>
+                </div>
+                <p>The string is now saved into the memory area associated with the variable. We can access it using the variable name:</p>
+                <div class="code">
+                    <code>let message;
+                        message = 'Hello!';
+                        <br><br>
+                        alert(message); // shows the variable content</code>
+                </div>
+                <p>To be concise, we can combine the variable declaration and assignment into a single line:</p>
+                <div class="code">
+                    <code>let message = 'Hello!'; // define the variable and assign the value
+                        <br><br>
+                        alert(message); // Hello!</code>
+                </div>
+                <p>We can also declare multiple variables in one line:</p>
+                <div class="code">
+                    <code>let user = 'John', age = 25, message = 'Hello';</code>
+                </div>
+                <p>That might seem shorter, but we don’t recommend it. For the sake of better readability, please use a single line per variable.
+                    <br><br>
+                    The multiline variant is a bit longer, but easier to read:</p>
+                <div class="code">
+                    <code>let user = 'John';<br>
+                        let age = 25;<br>
+                        let message = 'Hello';</code>
+                </div>
+                <p>Some people also define multiple variables in this multiline style:</p>
+                <div class="code">
+                    <code>let user = 'John',<br>
+                        age = 25,<br>
+                        message = 'Hello';</code>
+                </div>
+                <h3>Variable naming</h3>
+                <p>There are two limitations on variable names in JavaScript:</p>
+                <ol>
+                    <li>The name must contain only letters, digits, or the symbols <code>$</code> and <code>_</code>.</li>
+                    <li>The first character must not be a digit.</li>
+                </ol>
+                <p>Examples of valid names:</p>
+                <div class="code">
+                    <code>let userName;<br>
+                        let test123;</code>
+                </div>
+                <p>When the name contains multiple words, camelCase is commonly used. That is: words go one after another, each word except first starting with a capital letter: <code>myVeryLongName</code>.
+                    <br><br>
+                    What’s interesting – the dollar sign <code>'$'</code> and the underscore <code>'_'</code> can also be used in names. They are regular symbols, just like letters, without any special meaning.
+                    <br><br>
+                    These names are valid:</p>
+                <div class="code">
+                    <code>let $ = 1; // declared a variable with the name "$"<br>
+                        let _ = 2; // and now a variable with the name "_"
+                        <br><br>
+                        alert($ + _); // 3</code>
+                </div>
+                <p>Examples of incorrect variable names:</p>
+                <div class="code">
+                    <code>let 1a; // cannot start with a digit
+                        <br><br>
+                        let my-name; // hyphens '-' aren't allowed in the name</code>
+                </div>
+                <h3>Constants</h3>
+                <p>To declare a constant (unchanging) variable, use <code>const</code> instead of <code>let</code>:</p>
+                <div class="code">
+                    <code>const myBirthday = '18.04.1982';</code>
+                </div>
+                <p>Variables declared using <code>const</code> are called “constants”. They cannot be reassigned. An attempt to do so would cause an error:</p>
+                <div class="code">
+                    <code>const myBirthday = '18.04.1982';
+                        <br><br>
+                        myBirthday = '01.01.2001'; // error, can't reassign the constant!</code>
+                </div>
+                <p>When a programmer is sure that a variable will never change, they can declare it with const to guarantee and clearly communicate that fact to everyone.
+                </p>
+                <h4>Uppercase constants</h4>
+                <p>There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.<br><br>
+                    Such constants are named using capital letters and underscores.<br><br>
+                    For instance, let’s make constants for colors in so-called “web” (hexadecimal) format:</p>
+                <div class="code">
+                    <code>
+                        const COLOR_RED = "#F00";<br>
+                        const COLOR_GREEN = "#0F0";<br>
+                        const COLOR_BLUE = "#00F";<br>
+                        const COLOR_ORANGE = "#FF7F00";
+                        <br><br>
+                        // ...when we need to pick a color<br>
+                        let color = COLOR_ORANGE;<br>
+                        alert(color); // #FF7F00</code>
+                </div>
+                <p>Benefits:</p>
+                <ul>
+                    <li><code>COLOR_ORANGE</code> is much easier to remember than <code>"#FF7F00"</code>.</li>
+                    <li>It is much easier to mistype "#FF7F00" than <code>COLOR_ORANGE</code>.</li>
+                    <li>When reading the code, <code>COLOR_ORANGE</code> is much more meaningful than <code>#FF7F00</code>.</li>
+                </ul>
+                <p>When should we use capitals for a constant and when should we name it normally? Let’s make that clear.
+                    <br><br>
+                    Being a “constant” just means that a variable’s value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are calculated in run-time, during the execution, but do not change after their initial assignment.
+                    <br><br>
+                    For instance:</p>
+                <div class="code">
+                    <code>const pageLoadTime = /* time taken by a webpage to load */;</code>
+                </div>
+                <p>The value of <code>pageLoadTime</code> is not known prior to the page load, so it’s named normally. But it’s still a constant because it doesn’t change after assignment.
+                    <br><br>
+                    In other words, capital-named constants are only used as aliases for “hard-coded” values.</p>
+            </header>
+        </section>
+        <section class="main-section" id="Data_types">
+            <header>
+                <h1>Data types</h1>
+                <p>The latest ECMAScript standard defines seven data types:</p>
+                <ol>
+                    <li>Six data types that are primitives:</li>
+                    <br>
+                    <ul>
+                        <li>Boolean. true and false.</li>
+                        <li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+                        <li>undefined. A top-level property whose value is undefined.</li>
+                        <li>Number. 42 or 3.14159.</li>
+                        <li>String. "Howdy"</li>
+                        <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+                    </ul>
+                    <br>
+                    <li>and Object</li>
+                </ol>
+                <p>Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.</p>
+            </header>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>
+                <h1>Reference</h1>
+                <p>All the documentation in this page is taken from <a href="https://javascript.info">JAVASCRIPT.INFO</a></p>
+            </header>
+        </section>
+    </main>
+</body>
+
+</html>
